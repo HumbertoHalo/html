@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Language Interactive</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h3 {
+            color: #00b8d8;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 90%;
+            height: auto;
+            margin: 12px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,184,216,0.25);
+        }
+
+        .button {
+            background-color: #00b8d8;
+            border: none;
+            color: #111;
+            padding: 12px 28px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 6px 4px;
+            cursor: pointer;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,184,216,0.2);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: #009ab5;
+            transform: translateY(-2px);
+        }
+
+        a.btn-home {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 12px 28px;
+            border-radius: 12px;
+            background: #00b8d8;
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,184,216,0.2);
+        }
+
+        a.btn-home:hover {
+            background: #009ab5;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>💻 A Simple Interactive Machine Language</h3>
+    <p>Select an instruction to view both the <strong>Machine Language</strong> and its <strong>English Translation</strong>:</p>
+
+    <div>
+        <button class="button" onclick="document.getElementById('MLinstrucitons').src='ML1.png'; document.getElementById('Englishinstrucitons').src='EI1.png'">156C</button>
+        <button class="button" onclick="document.getElementById('MLinstrucitons').src='ML2.png'; document.getElementById('Englishinstrucitons').src='EI2.png'">166D</button>
+        <button class="button" onclick="document.getElementById('MLinstrucitons').src='ML3.png'; document.getElementById('Englishinstrucitons').src='EI3.png'">5056</button>
+        <button class="button" onclick="document.getElementById('MLinstrucitons').src='ML4.png'; document.getElementById('Englishinstrucitons').src='EI4.png'">306E</button>
+        <button class="button" onclick="document.getElementById('MLinstrucitons').src='ML5.png'; document.getElementById('Englishinstrucitons').src='EI5.png'">C000</button>
+    </div>
+
+    <div>
+        <img id="MLinstrucitons" src="MLblank.png" alt="Machine Language Instructions">
+        <img id="Englishinstrucitons" src="" alt="English Instructions">
+    </div>
+
+    <a href="mainprojects.html" class="btn-home">⬅ Back to Home</a>
+
+    <footer>
+        <p>@ Powered by UB</p>
+    </footer>
+
+</body>
+</html>

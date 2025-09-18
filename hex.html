@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoC - Binary to Hexadecimal</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+:root{
+  --primary: #111;
+  --secondary: #222;
+  --accent: #00b8d8;
+  --highlight: #e0e0e0;
+  --gray: #3a3a3a;
+  --silver: #d5d7d8;
+  --font-body: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  --font-head: 'Oswald', 'Roboto', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  background: linear-gradient(135deg, var(--primary) 70%, var(--secondary) 100%);
+  color: var(--highlight);
+  padding: 28px;
+  text-align: center;
+}
+
+header h2 {
+  font-family: var(--font-head);
+  color: var(--accent);
+  margin-bottom: 28px;
+}
+
+.card {
+  background: rgba(20,20,20,0.85);
+  border-radius: 18px;
+  padding: 28px;
+  max-width: 900px;
+  margin: 0 auto 28px auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  border: 1px solid rgba(0,0,0,0.35);
+  text-align: left;
+}
+
+img {
+  display: block;
+  max-width: 200px;
+  margin: 0 auto 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,184,216,0.2);
+}
+
+input[type=number] {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--gray);
+  width: 150px;
+  margin-bottom: 12px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: var(--primary);
+  font-family: var(--font-head);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 14px rgba(0,184,216,0.4);
+}
+
+p {
+  margin-bottom: 12px;
+  color: var(--silver);
+}
+
+#demo {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+a {
+  color: var(--highlight);
+  text-decoration: none;
+  margin-top: 18px;
+  display: inline-block;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+footer {
+  text-align: center;
+  color: var(--silver);
+  font-size: 0.9rem;
+  margin-top: 28px;
+}
+</style>
+</head>
+<body>
+<header>
+  <h2>Project 3: Binary to Hexadecimal Converter</h2>
+</header>
+
+<div class="card">
+  <img src="https://kryanbz.github.io/FoC/bintohex.jpg" alt="Binary to Hexadecimal">
+  <p>Enter a 4-digit binary number:</p>
+  <input type="number" id="inputBin" value="">
+  <br>
+  <button onclick="binToHex()">Submit</button>
+  <p>Hexadecimal Value:</p>
+  <p id="demo">---</p>
+</div>
+
+<script>
+function binToHex() {
+  var x = document.getElementById("inputBin").value;
+  var hexOut = parseInt(x, 2).toString(16).toUpperCase();
+  document.getElementById("demo").innerHTML = hexOut || 'Invalid';
+}
+</script>
+
+<a href="mainprojects.html">Back to Home</a>
+
+<footer>
+  <p>@ Powered by UB</p>
+</footer>
+</body>
+</html>

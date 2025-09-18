@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FoC - UNICODE Converter</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #e0e0e0;
+  padding: 28px;
+  text-align: center;
+}
+input[type=text] {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #00b8d8;
+  color: #111;
+  cursor: pointer;
+  margin-left: 8px;
+}
+button:hover {
+  background-color: #00a0c0;
+}
+#demo {
+  font-size: 2rem;
+  margin-top: 20px;
+  color: #2bb94c;
+}
+img {
+  margin-top: 20px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,184,216,0.2);
+}
+a.btn-home {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: #00b8d8;
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+}
+a.btn-home:hover {
+  background: #00a0c0;
+}
+</style>
+</head>
+<body>
+
+<h2>Project 1: UNICODE Converter</h2>
+<hr>
+
+<p>Please input a UNICODE number (hex):</p>
+<input id="numb" type="text" placeholder="e.g., 1F600">
+<button type="button" onclick="convertUnicode()">Submit</button>
+
+<div id="demo"></div>
+
+<p><img src="https://kryanbz.github.io/FoC/uni1.jpg" alt="Unicode Example"></p>
+<p><img src="https://kryanbz.github.io/FoC/uni3.jpg" alt="Unicode Example"></p>
+<p><img src="https://kryanbz.github.io/FoC/uni4.jpg" alt="Unicode Example"></p>
+
+<a href="mainprojects.html" class="btn-home">Back to Home</a>
+
+<script>
+function convertUnicode() {
+  const x = document.getElementById("numb").value.trim();
+  if(!x) {
+    document.getElementById("demo").innerHTML = "Please enter a valid UNICODE hex value!";
+    return;
+  }
+  // Convert hex to actual character
+  const char = String.fromCodePoint(parseInt(x, 16));
+  document.getElementById("demo").innerHTML = `Character: ${char} (U+${x.toUpperCase()})`;
+}
+</script>
+
+<footer>
+  <p>@ Powered by UB</p>
+</footer>
+
+</body>
+</html>

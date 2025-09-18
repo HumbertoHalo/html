@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FoC - Fundamentals of Computing</title>
+  <!-- Theme fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0a0a0a;
+      --secondary: #1a1a1a;
+      --accent: #00b8d8;
+      --highlight: #e0e0e0;
+      --gray: #3a3a3a;
+      --silver: #d5d7d8;
+      --font-body: 'Roboto', 'Segoe UI', Arial, sans-serif;
+      --font-head: 'Oswald', 'Roboto', Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-body);
+      background: var(--primary);
+      color: var(--highlight);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: linear-gradient(90deg, var(--primary) 60%, var(--gray) 100%);
+      padding: 0 24px;
+      box-shadow: 0 4px 24px #000a;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header h2 {
+      font-family: var(--font-head);
+      font-size: 2.2rem;
+      color: var(--accent);
+      letter-spacing: 3px;
+      font-weight: 700;
+      text-shadow: 0 0 12px var(--accent);
+      margin: 0;
+    }
+    nav {
+      background: var(--secondary);
+      box-shadow: 0 2px 8px #0007;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      gap: 38px;
+      padding: 0.7rem 0;
+      margin: 0;
+    }
+    nav li h5 {
+      margin: 0;
+    }
+    nav a {
+      color: var(--silver);
+      font-family: var(--font-head);
+      font-size: 1.07rem;
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 18px;
+      transition: background 0.3s, color 0.3s, box-shadow .3s;
+      position: relative;
+      display: inline-block;
+    }
+    nav a:hover, nav a.active {
+      background: var(--accent);
+      color: var(--primary);
+      box-shadow: 0 0 16px var(--accent);
+    }
+    section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2.4rem 0 1.5rem 0;
+      width: 100%;
+    }
+    article {
+      background: linear-gradient(145deg, var(--secondary), #222);
+      border-radius: 18px;
+      border: 1px solid #333;
+      box-shadow: 0 0 20px #00b8d850;
+      padding: 2.5rem 2rem 2rem 2rem;
+      max-width: 650px;
+      width: 98%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      text-align: center;
+      transition: box-shadow .3s;
+    }
+    article:hover {
+      box-shadow: 0 0 38px var(--accent);
+      border-color: var(--accent);
+    }
+    article img {
+      border-radius: 12px;
+      box-shadow: 0 0 18px var(--accent);
+      margin-bottom: 1.2rem;
+      max-width: 100%;
+      height: auto;
+    }
+    article p {
+      font-size: 1.12rem;
+      line-height: 1.7;
+      margin-bottom: 0;
+      color: var(--highlight);
+      text-align: left;
+      width: 100%;
+    }
+    footer {
+      background: linear-gradient(90deg, var(--gray) 60%, var(--primary) 100%);
+      color: var(--silver);
+      text-align: center;
+      padding: 1.2rem 0 1rem 0;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      font-family: var(--font-head);
+      box-shadow: 0 -4px 24px #000a;
+      width: 100%;
+      margin-top: auto;
+    }
+    /* Glow animation for accent */
+    @keyframes pulse {
+      0% { box-shadow: 0 0 20px var(--accent); }
+      50% { box-shadow: 0 0 40px var(--accent); }
+      100% { box-shadow: 0 0 20px var(--accent); }
+    }
+    article:hover { animation: pulse 2s infinite ease-in-out; }
+    /* Responsive */
+    @media (max-width: 800px) {
+      article { max-width: 98vw; padding: 1.3rem 0.7rem; }
+      header h2 { font-size: 1.2rem; }
+      nav ul { gap: 16px; }
+      section { padding: 1.1rem 0 0.6rem 0; }
+      article img { width: 98%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2><b>Fundamentals of Computing</b></h2>
+  </header>
+  <nav>
+    <ul>
+      <li><h5><a href="index.html">Home</a></h5></li>
+    </ul>
+  </nav>
+  <section>
+    <article>
+      <img src="FOC.png" alt="FoC" width="505" height="182">
+      <p>
+        This course is an introduction to the fundamentals of Computer Science
+        that will provide students with a foundation for future courses in Computer
+        Science. The course is a broad survey of the discipline through topics that
+        allow students to understand the capabilities of computer systems in terms
+        of: the computer architecture; operating systems and computer networks;
+        software and software development; data organization and visualization;
+        and the potential of computing machines.
+      </p>
+    </article>
+  </section>
+  <footer>
+    <p>@ Powered by UB</p>
+  </footer>
+</body>
+</html>

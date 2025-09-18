@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoC - Project 1: NOT Gate</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+<style>
+:root{
+  --primary: #111;
+  --secondary: #222;
+  --accent: #00b8d8;
+  --highlight: #e0e0e0;
+  --gray: #3a3a3a;
+  --silver: #d5d7d8;
+  --font-body: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  --font-head: 'Oswald', 'Roboto', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  background: linear-gradient(135deg, var(--primary) 70%, var(--secondary) 100%);
+  color: var(--highlight);
+  padding: 28px;
+  text-align: center;
+}
+
+header h2 {
+  font-family: var(--font-head);
+  color: var(--accent);
+  margin-bottom: 28px;
+}
+
+.card {
+  background: rgba(20,20,20,0.85);
+  border-radius: 18px;
+  padding: 28px;
+  max-width: 900px;
+  margin: 0 auto 28px auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  border: 1px solid rgba(0,0,0,0.35);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-head);
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  background: var(--accent);
+  color: var(--primary);
+  border: none;
+  border-radius: 8px;
+  margin: 8px;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 14px rgba(0,184,216,0.4);
+}
+
+img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-top: 12px;
+  box-shadow: 0 8px 20px rgba(0,184,216,0.2);
+}
+
+footer {
+  text-align: center;
+  color: var(--silver);
+  font-size: 0.9rem;
+  margin-top: 28px;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.column {
+  background: rgba(50,50,50,0.3);
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1;
+  min-width: 220px;
+}
+
+a {
+  color: var(--highlight);
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 18px;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width:768px) {
+  .row {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h2>Project 1: NOT Gate</h2>
+</header>
+
+<div class="card">
+  <div class="row">
+    <div class="column">
+      <h3>Input</h3>
+      <button onclick="document.getElementById('notGateImage').src='noton2.png'">ON</button>
+      <button onclick="document.getElementById('notGateImage').src='notoff2.png'">OFF</button>
+    </div>
+    <div class="column">
+      <h3>Output</h3>
+      <hr>
+      <img id="notGateImage" src="noton2.png" alt="NOT Gate Output" width="400" height="86">
+    </div>
+  </div>
+  <a href="mainprojects.html">Back to Home</a>
+</div>
+
+<footer>
+  <p>@ Powered by UB</p>
+</footer>
+
+</body>
+</html>

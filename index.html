@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Page - Developer Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+    :root {
+      --primary: #0a0a0a;
+      --secondary: #1a1a1a;
+      --accent: #00b8d8;
+      --highlight: #e0e0e0;
+      --gray: #3a3a3a;
+      --silver: #d5d7d8;
+      --font-body: 'Roboto', 'Segoe UI', Arial, sans-serif;
+      --font-head: 'Oswald', 'Roboto', Arial, sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: var(--font-body);
+      background: var(--primary);
+      color: var(--highlight);
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    /* Header */
+    header {
+      background: linear-gradient(90deg, var(--primary) 60%, var(--gray) 100%);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      box-shadow: 0 4px 24px #000a;
+      height: 68px;
+      width: 100%;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+      object-fit: cover;
+    }
+    .logo span {
+      font-family: var(--font-head);
+      font-size: 1.7rem;
+      letter-spacing: 2px;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    nav {
+      display: flex;
+      gap: 34px;
+    }
+    nav a {
+      color: var(--silver);
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 16px;
+      transition: background 0.3s, color 0.3s;
+    }
+    nav a:hover, nav a.active {
+      background: var(--accent);
+      color: var(--primary);
+    }
+    
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      padding: 2rem;
+      text-align: center;
+    }
+    .main-title {
+      font-family: var(--font-head);
+      font-size: 3.5rem;
+      letter-spacing: 4px;
+      color: var(--accent);
+      text-shadow: 0 0 12px var(--accent);
+      margin-bottom: 2rem;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    a.card {
+      /* Make the card link fill its grid cell */
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+    }
+    .card {
+      background: linear-gradient(145deg, var(--secondary), #222);
+      border-radius: 16px;
+      border: 1px solid #333;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    a.card:hover, a.card:focus {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 0 30px var(--accent);
+      border-color: var(--accent);
+      outline: none;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s;
+      pointer-events: none;
+    }
+    a.card:hover .card::before {
+      opacity: 0.2;
+      animation: pulse 2s infinite ease-in-out;
+    }
+    .card-title {
+      font-family: var(--font-head);
+      font-size: 1.8rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+    /* Keyframe animation for glowing effect */
+    @keyframes pulse {
+      0% { transform: scale(0.8); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(0.8); }
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      .grid-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 600px) {
+      header { flex-direction: column; height: auto; padding: 12px 0; }
+      nav { gap: 12px; margin-top: 10px; }
+      .main-title { font-size: 2.5rem; }
+      .grid-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .card { padding: 1.5rem; }
+      .card-title { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="main-title">Welcome</h1>
+    <div class="grid-container">
+      <a href="course.html" class="card">
+        <div class="card-title">Course</div>
+      </a>
+      <a href="mainprojects.html" class="card">
+        <div class="card-title">Projects</div>
+      </a>
+      <a href="concept.html" class="card">
+        <div class="card-title">Concepts</div>
+      </a>
+      <a href="database.html" class="card">
+        <div class="card-title">Database</div>
+      </a>
+      <a href="documentations.html" class="card">
+        <div class="card-title">Documentations</div>
+      </a>
+      <a href="aboutd.html" class="card">
+        <div class="card-title">About Dev</div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

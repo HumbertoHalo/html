@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Developer</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+    :root {
+      --primary: #111;
+      --secondary: #222;
+      --accent: #00b8d8;
+      --highlight: #e0e0e0;
+      --gray: #3a3a3a;
+      --silver: #d5d7d8;
+      --font-body: 'Roboto', 'Segoe UI', Arial, sans-serif;
+      --font-head: 'Oswald', 'Roboto', Arial, sans-serif;
+    }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      background: linear-gradient(135deg, var(--primary) 70%, var(--secondary) 100%);
+      color: var(--highlight);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    /* Header */
+    header {
+      background: linear-gradient(90deg, var(--primary) 60%, var(--gray) 100%);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      box-shadow: 0 4px 24px #000a;
+      height: 68px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+      object-fit: cover;
+    }
+    .logo span {
+      font-family: var(--font-head);
+      font-size: 1.7rem;
+      letter-spacing: 2px;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    nav {
+      display: flex;
+      gap: 34px;
+    }
+    nav a {
+      color: var(--silver);
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 16px;
+      transition: background 0.3s, color 0.3s;
+    }
+    nav a:hover, nav a.active {
+      background: var(--accent);
+      color: var(--primary);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(120deg, var(--primary) 70%, var(--gray) 100%);
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 1;
+    }
+    .hero-bg img {
+      position: absolute;
+      right: 0; bottom: -30px;
+      width: 700px;
+      max-width: 60vw;
+      opacity: 0.28;
+      filter: blur(2px) grayscale(0.6);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: left;
+      max-width: 660px;
+      padding: 0 40px;
+    }
+    .hero-title {
+      font-family: var(--font-head);
+      font-size: 2.8rem;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 18px;
+      text-shadow: 0 2px 16px var(--accent);
+    }
+    .hero-desc {
+      font-size: 1.2rem;
+      color: var(--silver);
+      margin-bottom: 28px;
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.7;
+      letter-spacing: 1px;
+    }
+    .hero-btn {
+      background: var(--accent);
+      color: var(--primary);
+      border: none;
+      padding: 16px 40px;
+      border-radius: 32px;
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 700;
+      box-shadow: 0 0 12px var(--accent);
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+    .hero-btn:hover {
+      background: var(--primary);
+      color: var(--accent);
+      box-shadow: 0 0 32px var(--accent);
+    }
+
+    /* Bio 3D Circle Standout */
+    .bio-showcase-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 70px 0;
+      position: relative;
+    }
+    .bio-3d-circle {
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle at 60% 40%, var(--accent) 60%, transparent 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 80px var(--accent), 0 0 420px #00b8d822;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      transition: box-shadow 0.4s;
+    }
+    .bio-3d-circle:hover {
+      box-shadow: 0 0 160px var(--accent), 0 0 900px #00b8d840;
+      transform: scale(1.03);
+    }
+    .bio-3d-img {
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 30px var(--accent);
+      border: 6px solid var(--secondary);
+      background: #222;
+    }
+    .bio-text-card {
+      margin-left: -44px;
+      width: 420px;
+      background: linear-gradient(120deg, #1a1a1a 90%, var(--gray) 100%);
+      border-radius: 22px;
+      box-shadow: 0 0 38px #00b8d830;
+      padding: 38px 38px 38px 68px;
+      position: relative;
+      z-index: 1;
+      font-family: var(--font-body);
+      color: var(--silver);
+    }
+    .bio-text-card h2 {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    .bio-text-card p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 10px;
+      color: var(--highlight);
+      font-family: var(--font-body);
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    /* Social Media Simple Circles */
+    .social-media {
+      margin: 42px 0 0 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 34px;
+    }
+    .social-icon {
+      width: 66px;
+      height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 16px var(--accent);
+      transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+    .social-icon:hover {
+      background: var(--primary);
+      box-shadow: 0 0 44px var(--accent);
+      transform: scale(1.1);
+    }
+    .social-icon img {
+      width: 32px; height: 32px;
+      filter: grayscale(1) brightness(2);
+      transition: filter 0.3s;
+    }
+    .social-icon:hover img {
+      filter: none;
+    }
+
+    /* Main Content Section */
+    .main-content {
+      max-width: 1040px;
+      margin: 88px auto 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+      padding: 0 24px;
+    }
+    .storyline {
+      background: linear-gradient(115deg, var(--secondary) 90%, var(--gray) 100%);
+      border-radius: 19px;
+      box-shadow: 0 0 22px #00b8d818;
+      padding: 34px 28px;
+      font-family: var(--font-body);
+      color: var(--silver);
+    }
+    .storyline h3 {
+      font-family: var(--font-head);
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 11px;
+    }
+    .storyline p {
+      font-size: 1.01rem;
+      line-height: 1.7;
+      letter-spacing: 1px;
+      margin-bottom: 7px;
+      color: var(--highlight);
+      font-family: var(--font-body);
+    }
+    /* Goals */
+    .goals {
+      background: linear-gradient(100deg, var(--secondary) 80%, var(--gray) 100%);
+      border-radius: 19px;
+      box-shadow: 0 0 22px #00b8d818;
+      padding: 34px 28px;
+      font-family: var(--font-body);
+      color: var(--silver);
+    }
+    .goals h3 {
+      font-family: var(--font-head);
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 11px;
+    }
+    .goals ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .goals ul li {
+      font-size: 1.01rem;
+      line-height: 1.7;
+      letter-spacing: 1px;
+      margin-bottom: 7px;
+      color: var(--highlight);
+      padding-left: 10px;
+      position: relative;
+    }
+    .goals ul li::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-right: 12px;
+      vertical-align: middle;
+      position: absolute;
+      left: 0;
+      top: 9px;
+    }
+
+    /* Section Rays (Character Showcase) */
+    .character-showcase {
+      margin: 90px auto 0 auto;
+      max-width: 1080px;
+      padding: 0 24px;
+    }
+    .characters-title {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      color: var(--accent);
+      letter-spacing: 2px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .character-rays {
+      display: flex;
+      gap: 42px;
+      justify-content: center;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+    .character-ray {
+      background: linear-gradient(140deg, var(--accent) 10%, var(--primary) 90%);
+      box-shadow: 0 0 44px #00b8d82a;
+      border-radius: 24px 24px 8px 8px;
+      width: 134px;
+      height: 290px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 24px;
+    }
+    .character-ray img {
+      width: 78px;
+      height: 78px;
+      border-radius: 50% 50% 25% 25%;
+      object-fit: cover;
+      margin-bottom: 18px;
+      box-shadow: 0 0 18px var(--accent);
+      border: 4px solid var(--primary);
+      background: #222;
+    }
+    .character-ray .char-name {
+      font-family: var(--font-head);
+      font-size: 1.0rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+    .character-ray .char-role {
+      font-size: 0.96rem;
+      color: var(--silver);
+      margin-bottom: 9px;
+      font-family: var(--font-body);
+    }
+    .character-ray .char-desc {
+      font-size: 0.91rem;
+      color: var(--highlight);
+      text-align: center;
+      padding: 0 6px;
+    }
+
+    /* Footer Section */
+    footer {
+      background: linear-gradient(90deg, var(--gray) 70%, var(--primary) 100%);
+      color: var(--silver);
+      font-family: var(--font-body);
+      font-size: 1.01rem;
+      text-align: center;
+      padding: 46px 0 20px 0;
+      margin-top: 140px;
+      border-top: 1px solid var(--accent);
+      position: relative;
+      z-index: 10;
+    }
+    .footer-links {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .footer-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-family: var(--font-head);
+      font-size: 1.08rem;
+      padding: 8px 14px;
+      border-radius: 16px;
+      transition: background 0.3s, color 0.3s;
+    }
+    .footer-links a:hover {
+      background: var(--accent);
+      color: var(--primary);
+    }
+    .footer-socials {
+      margin: 24px 0 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+    .footer-social-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 12px var(--accent);
+      transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+    .footer-social-icon:hover {
+      background: var(--primary);
+      box-shadow: 0 0 22px var(--accent);
+      transform: scale(1.1);
+    }
+    .footer-social-icon img {
+      width: 22px; height: 22px;
+      filter: grayscale(1) brightness(2);
+      transition: filter 0.3s;
+    }
+    .footer-social-icon:hover img {
+      filter: none;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      .main-content {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        margin-top: 44px;
+      }
+      .bio-showcase-wrap {
+        flex-direction: column;
+        margin: 40px 0;
+      }
+      .bio-text-card {
+        margin-left: 0;
+        width: 98vw;
+        max-width: 440px;
+        padding: 34px 26px 34px 26px;
+      }
+      .bio-3d-circle { margin-bottom: 12px; }
+    }
+    @media (max-width: 600px) {
+      header { flex-direction: column; height: auto; padding: 12px 0;}
+      nav { gap: 12px; }
+      .hero { height: 320px;}
+      .bio-3d-circle { width: 220px; height: 220px;}
+      .bio-3d-img { width: 120px; height: 120px;}
+      .bio-text-card h2 { font-size: 1.3rem;}
+      .main-content { padding: 0 8px;}
+      .character-rays { gap: 12px;}
+      .character-ray { width: 92px; height: 180px; padding-bottom: 13px;}
+      .character-ray img { width: 48px; height: 48px;}
+      .character-ray .char-name { font-size: 0.85rem;}
+      .character-ray .char-role { font-size: 0.77rem;}
+      .character-ray .char-desc { font-size: 0.71rem;}
+      .footer-links { gap: 11px;}
+      .footer-socials { gap: 12px;}
+      .footer-social-icon { width: 30px; height: 30px;}
+      .footer-social-icon img { width: 17px; height: 17px;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="button.png" alt="button">
+      <span>About Humberto Garcia</span>
+    </div>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="#storyline,#goals">Storyline and Goals</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="Image" alt="Image">
+    </div>
+    <div class="hero-content">
+      <div class="hero-title">Hey there Welcome to my Personal Website</div>
+      <div class="hero-desc">Welcome, and Hello once more let me introduce myself my name is Humberto Garcia, and if you want to know more about me scroll down or click the button below to know more about me!!.</div>
+      <a href="#bio"><button class="hero-btn">Explore My Bio</button></a>
+    </div>
+  </section>
+
+  <!-- Bio Section 3D Circle Standout -->
+  <section id="bio" class="bio-showcase-wrap">
+    <div class="bio-3d-circle">
+      <img src="pic.png" alt="Your Portrait" class="bio-3d-img">
+    </div>
+    <div class="bio-text-card">
+      <h2>My Biography</h2>
+      <p>
+        My name is Humberto Garcia
+      </p>
+      <p>
+        I am 17 years old
+      </p>
+      <p>
+        I come from Bella Vista Village
+      </p>
+      <!-- Social Media Circles -->
+      <div class="social-media">
+        <a class="social-icon" href="https://www.instagram.com/umbricciox?igsh=cWhrbmthN3M2emF3" target="_blank" title="Instagram">
+          <img src="instagram.png" alt="Instagram">
+        </a>
+        <a class="social-icon" href="https://youtube.com/@za2lr3n?si=thDnTjVY2H-voT9S" target="_blank" title="YouTube">
+          <img src="youtube.png" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Section -->
+  <section class="main-content">
+    <!-- Storyline Card -->
+    <div class="storyline" id="storyline">
+      <h3>Storyline</h3>
+      <p>
+        So I was born at Dangriga Town, however all my entire childhood I lived in a village which is located in the Toledo District. The name of the village is Bella Vista Village.
+      </p>
+      <p>
+        I was a student back at Bella Vista Government Secondary School
+      </p>
+      <p>
+        
+      </p>
+    </div>
+    <!-- Goals Card -->
+    <div class="goals" id="goals">
+      <h3>My Goals</h3>
+      <ul>
+        <li>Learn About IT</li>
+        <li>Learn new languages such as Japanese, Russian,Italian and so on</li>
+      </ul>
+    </div>
+  </section>
+    
+  <!-- Contact Section -->
+ <section id="contact" style="margin:100px auto 0 auto; max-width:560px; background:linear-gradient(120deg, var(--secondary) 90%, var(--gray) 100%); border-radius:18px; box-shadow:0 0 22px #00b8d818; padding:48px 30px; font-family:var(--font-body); text-align:center;">
+  <h2 style="font-family:var(--font-head);color:var(--accent);margin-bottom:14px;font-size:1.35rem;">Contact Me</h2>
+  <p style="color:var(--silver);font-size:1.05rem;margin-bottom:21px;">
+    You can reach me directly at: 
+    <a href="hg616688@proton.me" style="color:var(--accent); text-decoration:underline;">hg616688@proton.me</a>
+  </p>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="#bio">Bio</a>
+      <a href="#storyline,#goals">Storyline and Goals</a>
+      <a href="Mainfront page.html">Home</a>
+    </div>
+    <div class="footer-socials">
+      <a class="footer-social-icon" href="https://www.instagram.com/umbricciox?igsh=cWhrbmthN3M2emF3" target="_blank" title="Instagram">
+        <img src="instagram.png" alt="Instagram">
+      </a>
+      <a class="footer-social-icon" href="https://youtube.com/@za2lr3n?si=thDnTjVY2H-voT9S" target="_blank" title="YouTube">
+        <img src="youtube.png" alt="YouTube">
+      </a>
+    </div>
+    <div style="margin-top:10px;color:var(--silver);font-size:0.97rem;">
+      &copy; This Humberto Garcia Project
+    </div>
+  </footer>
+  <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('nav a, .footer-links a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href.startsWith("#")) {
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior: "smooth"});
+        }
+      });
+    });
+  </script>
+</body>
+</html>
