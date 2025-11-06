@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Class Works</title>
+  <style>
+    /* Reusing some styles from your main page for consistency */
+    :root {
+      --primary: #0a0a0a;
+      --secondary: #1a1a1a;
+      --accent: #00b8d8;
+      --highlight: #e0e0e0;
+      --font-body: 'Roboto', 'Segoe UI', Arial, sans-serif;
+      --font-head: 'Oswald', 'Roboto', Arial, sans-serif;
+    }
+    body {
+      font-family: var(--font-body);
+      background: var(--primary);
+      color: var(--highlight);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    .container {
+        max-width: 800px;
+        width: 100%;
+        text-align: center;
+    }
+    h1 {
+      font-family: var(--font-head);
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 2rem;
+    }
+    li a {
+      display: block;
+      background: var(--secondary);
+      border: 1px solid #333;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--highlight);
+      font-size: 1.1rem;
+      transition: background 0.3s, border-color 0.3s, color 0.3s;
+    }
+    li a:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--primary);
+    }
+    .back-btn {
+        margin-top: 2rem;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: var(--gray);
+        color: var(--highlight);
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background 0.3s;
+    }
+    .back-btn:hover {
+        background: var(--accent);
+        color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>My Class Works and Projects</h1>
+    
+    <ul>
+      <li><a href="https://humbertohalo.github.io/MiniGame/" target="_blank" rel="noopener noreferrer">Mini Game (External Link)</a></li>
+      <li><a href="https://humbertohalo.github.io/calculator/" target="_blank" rel="noopener noreferrer">Calculator (External Link)</a></li>
+      <li><a href="https://humbertohalo.github.io/BMI/" target="_blank" rel="noopener noreferrer">BMI Calculator (External Link)</a></li>
+    </ul>
+
+    <a href="index.html" class="back-btn">Go Back to Main Menu</a>
+  </div>
+
+</body>
+</html>
