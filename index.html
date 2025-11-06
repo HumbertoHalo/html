@@ -158,6 +158,28 @@
       50% { transform: scale(1.1); }
       100% { transform: scale(0.8); }
     }
+
+    /* >>>>>> START OF NEW CSS ADDITIONS <<<<<< */
+    /* Container for the single button below the grid */
+    .bottom-button-container {
+        text-align: center;
+        margin-top: 3rem; /* Add spacing between grid and this button */
+        padding-bottom: 2rem; /* Add spacing from bottom of viewport */
+    }
+    
+    /* Style specifically for the smaller 'My Class Works' button */
+    .bottom-button {
+        padding: 1rem 2rem; /* Make the button smaller than the main cards */
+        font-size: 1.2rem; /* Smaller font size */
+        max-width: 300px; /* Constrain the width */
+        margin: 0 auto; /* Center the button within its container */
+        transform: none !important; /* Override hover transform for a standard button look */
+    }
+
+    .bottom-button:hover {
+         transform: scale(1.05) !important; /* Add a subtle hover effect specific to this button */
+    }
+    /* >>>>>> END OF NEW CSS ADDITIONS <<<<<< */
     
     /* Responsive Design */
     @media (max-width: 900px) {
@@ -214,3 +236,4 @@
 </body>
 
 </html>
+
