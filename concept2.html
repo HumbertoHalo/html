@@ -4,10 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FoC - Concepts</title>
+
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" href="style.css">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+
 <style>
   :root{
     --primary: #111;
@@ -20,8 +25,6 @@
     --font-head: 'Oswald', 'Roboto', Arial, sans-serif;
   }
 
-  * { box-sizing: border-box; }
-
   body {
     margin: 0;
     min-height: 100vh;
@@ -31,16 +34,8 @@
     padding: 28px;
   }
 
-  header {
-    text-align: center;
-    margin-bottom: 28px;
-  }
-
-  header h2 {
-    font-family: var(--font-head);
-    color: var(--accent);
-    margin: 0;
-  }
+  header { text-align: center; margin-bottom: 28px; }
+  header h2 { font-family: var(--font-head); color: var(--accent); margin: 0; }
 
   nav ul {
     display: flex;
@@ -55,12 +50,9 @@
     text-decoration: none;
     color: var(--highlight);
     font-family: var(--font-head);
-    transition: color 0.2s;
+    transition: 0.2s;
   }
-
-  nav ul li a:hover {
-    color: var(--accent);
-  }
+  nav ul li a:hover { color: var(--accent); }
 
   .card {
     background: rgba(20,20,20,0.85);
@@ -69,60 +61,25 @@
     max-width: 900px;
     margin: 0 auto 28px auto;
     box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-    border: 1px solid rgba(0,0,0,0.35);
     text-align: center;
   }
 
-  h1, h3 {
-    font-family: var(--font-head);
-    color: var(--accent);
-    margin-bottom: 18px;
-  }
-
-  p {
-    line-height: 1.6;
-    margin-bottom: 18px;
-    color: var(--silver);
-  }
-
-  a.btn, a {
-    text-decoration: none;
-    color: var(--highlight);
-    font-weight: 500;
-    transition: all 0.2s;
-  }
-
-  a:hover {
-    color: var(--accent);
-  }
+  h1 { font-family: var(--font-head); color: var(--accent); margin-bottom: 18px; }
 
   img {
     max-width: 100%;
     border-radius: 14px;
     box-shadow: 0 8px 20px rgba(0,184,216,0.2);
     margin-bottom: 12px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: 0.2s;
   }
-
   img:hover {
     transform: scale(1.02);
     box-shadow: 0 12px 28px rgba(0,184,216,0.35);
   }
 
-  footer {
-    text-align: center;
-    color: var(--silver);
-    font-size: 0.9rem;
-    margin-top: 28px;
-  }
+  footer { text-align: center; color: var(--silver); font-size: 0.9rem; margin-top: 28px; }
 
-  /* responsive */
-  @media (max-width:768px) {
-    nav ul {
-      flex-direction: column;
-      gap: 12px;
-    }
-  }
 </style>
 </head>
 <body>
@@ -137,20 +94,18 @@
   </ul>
 </nav>
 
+<!-- SINGLE CARD -->
 <div class="card">
   <h1>Concepts</h1>
-  <a href="https://docs.google.com/presentation/d/1AF-_vhvJDSpYmJbaHHvB50gtM2V1P-JL/edit?slide=id.p1#slide=id.p1">
+
+  <!-- Image Linking to Presentation -->
+  <a href="https://docs.google.com/presentation/d/1AF-_vhvJDSpYmJbaHHvB50gtM2V1P-JL/edit?slide=id.p1#slide=id.p1" target="_blank">
     <img src="Green and Blue Futuristic Technology Computer Science Presentation_20251020_184843_0000.png" alt="Concepts">
   </a>
-</div>
-      <div class="card">
-  <h1>Concepts</h1>
-  <a href="https://docs.google.com/presentation/d/1AF-_vhvJDSpYmJbaHHvB50gtM2V1P-JL/edit?slide=id.p1#slide=id.p1">
-    <img src="Green and Blue Futuristic Technology Computer Science Presentation_20251020_184843_0000.png" alt="Concepts">
-  </a>
-  <!-- Video link beneath the image -->
-  <div class="video-link" style="margin-top: 14px;">
-    <a href="https://drive.google.com/drive/u/5/home" target="_blank" style="color:var(--accent); font-size:1.1rem;">
+
+  <!-- Normal link to video -->
+  <div style="margin-top: 16px;">
+    <a href="https://drive.google.com/file/d/1YWDT47EYj19tr2npqFqUN93izWQT0PQ7/view?usp=drive_link" target="_blank" style="color:var(--accent); font-size:1.15rem;">
       ▶ Watch Related Video
     </a>
   </div>
