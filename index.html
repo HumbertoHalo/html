@@ -1,3 +1,4 @@
+<!-- Button for "Binary to Base 10" added to the bottom section alongside others -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +34,6 @@
       justify-content: center;
       align-items: center;
     }
-    /* Header */
     header {
       background: linear-gradient(90deg, var(--primary) 60%, var(--gray) 100%);
       position: sticky;
@@ -85,8 +85,6 @@
       background: var(--accent);
       color: var(--primary);
     }
-    
-    /* Main Content */
     .container {
       max-width: 1200px;
       padding: 2rem;
@@ -107,7 +105,6 @@
       margin-top: 3rem;
     }
     a.card {
-      /* Make the card link fill its grid cell */
       display: block;
       text-decoration: none;
       color: inherit;
@@ -152,36 +149,26 @@
       margin-bottom: 1rem;
       letter-spacing: 1px;
     }
-    /* Keyframe animation for glowing effect */
     @keyframes pulse {
       0% { transform: scale(0.8); }
       50% { transform: scale(1.1); }
       100% { transform: scale(0.8); }
     }
-
-    /* >>>>>> START OF NEW CSS ADDITIONS <<<<<< */
-    /* Container for the single button below the grid */
     .bottom-button-container {
-        text-align: center;
-        margin-top: 3rem; /* Add spacing between grid and this button */
-        padding-bottom: 2rem; /* Add spacing from bottom of viewport */
+      text-align: center;
+      margin-top: 3rem;
+      padding-bottom: 2rem;
     }
-    
-    /* Style specifically for the smaller 'My Class Works' button */
     .bottom-button {
-        padding: 1rem 2rem; /* Make the button smaller than the main cards */
-        font-size: 1.2rem; /* Smaller font size */
-        max-width: 300px; /* Constrain the width */
-        margin: 0 auto; /* Center the button within its container */
-        transform: none !important; /* Override hover transform for a standard button look */
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      max-width: 300px;
+      margin: 0 auto;
+      transform: none !important;
     }
-
     .bottom-button:hover {
-         transform: scale(1.05) !important; /* Add a subtle hover effect specific to this button */
+      transform: scale(1.05) !important;
     }
-    /* >>>>>> END OF NEW CSS ADDITIONS <<<<<< */
-    
-    /* Responsive Design */
     @media (max-width: 900px) {
       .grid-container {
         grid-template-columns: 1fr 1fr;
@@ -225,38 +212,28 @@
       </a>
     </div>
   </div>
-<!-- NEW SECTION FOR THE SINGLE BOTTOM BUTTON -->
+  <!-- My Class Works Button (single, below grid) -->
   <div class="bottom-button-container">
-    <!-- Reusing the card style classes but applying the bottom-button modifier -->
     <a href="classworks.html" class="card bottom-button">
         <div class="card-title" style="margin-bottom: 0;">My Class Works</div>
     </a>
   </div>
-  <!-- NEW SECTION FOR THE THREE BOTTOM BUTTONS -->
-<div class="bottom-button-container" style="display: flex; justify-content: center; gap: 2rem; align-items: center; margin-top: 3rem; padding-bottom: 2rem;">
-  <!-- Left Button - Concept 2 -->
-  <a href="concept2.html" class="card bottom-button" style="flex: 1; max-width: 250px;">
+  <!-- Three bottom buttons (including new Binary to Base 10 button) -->
+  <div class="bottom-button-container" style="display: flex; justify-content: center; gap: 2rem; align-items: center; margin-top: 3rem; padding-bottom: 2rem;">
+    <a href="concept2.html" class="card bottom-button" style="flex: 1; max-width: 250px;">
       <div class="card-title" style="margin-bottom: 0;">More Concepts</div>
-  </a>
-  <!-- ADDITIONAL BUTTON FOR "My Repository" BELOW EXISTING BUTTONS -->
-
-<div class="bottom-button-container" style="display: flex; justify-content: center; gap: 2rem; align-items: center; margin-top: 3rem; padding-bottom: 2rem;">
-  <!-- My Repository Button -->
-  <a href="https://github.com/HumbertoHalo?tab=repositories" target="_blank" class="card bottom-button" style="flex: 1; max-width: 250px;">
+    </a>
+    <a href="https://github.com/HumbertoHalo?tab=repositories" target="_blank" class="card bottom-button" style="flex: 1; max-width: 250px;">
       <div class="card-title" style="margin-bottom: 0;">My Repository</div>
-  </a>
-</div>
-  
-  <!-- Right Button - OS History Quest Game (external link) -->
-  <a href="https://humbertohalo.github.io/os-history-quest/" target="_blank" class="card bottom-button" style="flex: 1; max-width: 250px;">
+    </a>
+    <a href="https://humbertohalo.github.io/os-history-quest/" target="_blank" class="card bottom-button" style="flex: 1; max-width: 250px;">
       <div class="card-title" style="margin-bottom: 0;">Play OS Quest</div>
-  </a>
-</div>
-  
+    </a>
+    <!-- NEW BUTTON FOR Binary to Base 10 -->
+    <a href="binary2base10.html" class="card bottom-button" style="flex: 1; max-width: 250px;">
+      <div class="card-title" style="margin-bottom: 0;">Binary to Base 10</div>
+    </a>
+  </div>
+
 </body>
-
 </html>
-
-
-
-
