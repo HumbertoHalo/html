@@ -4,6 +4,106 @@
     <meta charset="utf-8"/>
     <title>Binary Notation, Binary to Base Ten Conversion, Binary Addition</title>
     <link rel="stylesheet" href="Student3.css">
+    <style>
+      body {
+        background: #181926;
+        color: #eaf6fb;
+      }
+      .container.card {
+        background: linear-gradient(120deg, #232437 60%, #282a36 100%);
+        border: 1px solid #00d2d8;
+        border-radius: 18px;
+        box-shadow: 0 4px 32px #00d2d855;
+        margin-bottom: 2rem;
+      }
+      h2.section-title {
+        color: #00d2d8;
+        text-shadow: 1px 1px 12px #143d49, 0 0 2px #0a4048;
+      }
+      .btn-primary {
+        background: #00d2d8;
+        color: #181926;
+        border: none;
+        border-radius: 6px;
+        padding: 0.54em 1.2em;
+        margin-top: 1em;
+        font-size: 1.06em;
+        cursor: pointer;
+        transition: background 0.2s;
+        font-weight: bold;
+        box-shadow: 0 2px 16px #00d2d822;
+      }
+      .btn-primary:hover {
+        background: #143d49;
+        color: #eaf6fb;
+      }
+      .btn-secondary {
+        background: #232437;
+        color: #00d2d8;
+        border: 1px solid #00d2d8;
+        border-radius: 6px;
+        padding: 0.54em 1.1em;
+        font-size: 1em;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 0 1px 8px #0a404844;
+      }
+      .btn-secondary:hover {
+        background: #00d2d8;
+        color: #232437;
+      }
+      .input-field {
+        background: #232437;
+        color: #eaf6fb;
+        border: 1.5px solid #00d2d8;
+        border-radius: 5px;
+        padding: 0.5em;
+        font-size: 1.1em;
+        margin-top: 0.4em;
+        margin-bottom: 0.3em;
+        text-align: center;
+        outline: none;
+        transition: border 0.2s;
+        font-family: monospace;
+      }
+      .input-field:focus {
+        border-color: #4be4ce;
+        box-shadow: 0 2px 8px #4be4ce77;
+      }
+      .output-wrap {
+        margin-top: 1em;
+        font-size: 1.2em;
+      }
+      .output-label {
+        color: #4be4ce;
+      }
+      .output-value {
+        color: #f8c733;
+        font-weight: bold;
+        padding-left: 0.3em;
+      }
+      .main-img {
+        max-width: 180px;
+        margin: 1em auto 0.5em auto;
+        display: block;
+        border-radius: 12px;
+        box-shadow: 0 2px 14px #143d49cc;
+        border: 2px solid #00d2d8;
+        background: #181926;
+      }
+      .main-img.large {
+        max-width: 340px;
+      }
+      label.label-description {
+        display: block;
+        margin-bottom: 0.2em;
+        color: #eaf6fb;
+        font-size: 1.1em;
+      }
+      @media (max-width: 700px){
+        .main-img.large { max-width: 95vw; }
+      }
+    </style>
 </head>
 <body>
 
@@ -40,15 +140,35 @@
   </main>
 
   <script>
+    // COLOR CONSTANTS FOR DARK THEME
+    const ACCENT    = "#00d2d8";     // cyan for accent
+    const SUBACCENT = "#4be4ce";     // teal for highlights
+    const WARNING   = "#f8c733";     // yellow for warnings
+
+    // Conversion function with visual feedback
     document.getElementById("convertBtn").addEventListener("click", function () {
-      var x = document.getElementById("inputBin").value.trim();
-      // Simple input validation: only 1-9 base 2 with 4 bits
+      const input = document.getElementById("inputBin");
+      const output = document.getElementById("demo");
+      let x = input.value.trim();
       if (!/^[01]{1,4}$/.test(x)) {
-        document.getElementById("demo").textContent = "Invalid input!";
+        output.textContent = "Invalid input!";
+        output.style.color = WARNING;
+        input.style.borderColor = WARNING;
+        input.style.background = "#181926";
         return;
       }
-      var dec = parseInt(x, 2);
-      document.getElementById("demo").textContent = dec;
+      const dec = parseInt(x, 2);
+      output.textContent = dec;
+      output.style.color = ACCENT;
+      input.style.borderColor = SUBACCENT;
+      input.style.background = "#232437";
+    });
+
+    // Restore input style on change
+    document.getElementById("inputBin").addEventListener("input", function(){
+      this.style.borderColor = "#00d2d8";
+      this.style.background = "#232437";
+      document.getElementById("demo").textContent = "";
     });
 
     window.addEventListener('scroll', function(){
