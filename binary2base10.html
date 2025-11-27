@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Binary Notation, Binary to Base Ten Conversion, Binary Addition</title>
+    <link rel="stylesheet" href="Student3.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="index.html#projects">&#8592; Back</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container card">
+      <h2 class="section-title">Binary to Base 10</h2>
+      <img src="baseTen.png" alt="BaseTen" class="main-img">
+      <label class="label-description" for="inputBin">
+        Enter any number in Base 2 from 1-9 in 4 bits:
+      </label>
+      <input type="text" id="inputBin" class="input-field" maxlength="4" placeholder="e.g. 1001">
+      <button class="btn-primary" id="convertBtn">Convert!</button>
+      <div class="output-wrap">
+        <span class="output-label">Base 10 Value: </span>
+        <span id="demo" class="output-value"></span>
+      </div>
+    </section>
+
+    <section class="container card">
+      <h2 class="section-title">Binary Addition</h2>
+      <img src="adding-binary-numbers-l.jpg" alt="Binary Addition" class="main-img large">
+      <div style="margin-top: 1em;">
+        <a href="index.html#projects"><button class="btn-secondary">&#8592; Back</button></a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("convertBtn").addEventListener("click", function () {
+      var x = document.getElementById("inputBin").value.trim();
+      // Simple input validation: only 1-9 base 2 with 4 bits
+      if (!/^[01]{1,4}$/.test(x)) {
+        document.getElementById("demo").textContent = "Invalid input!";
+        return;
+      }
+      var dec = parseInt(x, 2);
+      document.getElementById("demo").textContent = dec;
+    });
+
+    window.addEventListener('scroll', function(){
+      var header = document.querySelector('header');
+      header.classList.toggle('sticky', window.scrollY > 0);
+    });
+  </script>
+</body>
+</html>
